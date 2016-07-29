@@ -19,6 +19,7 @@ The `build.gradle` file fetches the latest version of commons-codec (currently 1
 ### JitPack
 Alternatively you can do all of this in one step by relying on [JitPack.io](https://jitpack.io):
  - In your `build.gradle` file, add `maven { url 'https://jitpack.io' }` to the list of `repositories` and add `compile 'com.github.ExCiteS:apache-commons-codec-shaded:1.10'` to the `dependencies`.
- 
- ## Credits
- By [Matthias Stevens](https://github.com/mstevens83) for UCL ExCiteS.
+
+
+## Credits
+By [Matthias Stevens](https://github.com/mstevens83) for UCL ExCiteS.
