@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
     }
 }
 
@@ -16,7 +16,7 @@ apply plugin: 'com.github.johnrengelman.shadow'
 def ccGroupId = 'commons-codec'
 def ccArtifactId = ccGroupId
 def ccsArtifactId = ccArtifactId + '-shaded'
-def ccVersion = '1.10'
+def ccVersion = '1.11'
 
 allprojects {
     repositories {
@@ -37,12 +37,11 @@ shadowJar {
 
 publishing {
     publications {
-        shadow(MavenPublication) {
+        shadow(MavenPublication) { publication ->
             groupId ccGroupId
             artifactId ccsArtifactId
             version ccVersion
-
-            from components.shadow
+            project.shadow.component(publication)
         }
     }
     repositories {
