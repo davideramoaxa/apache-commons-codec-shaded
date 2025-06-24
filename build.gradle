@@ -28,6 +28,11 @@ apply plugin: 'maven-publish'
 
 apply plugin: 'com.github.johnrengelman.shadow'
 
+group = 'com.github.jitpack-io'
+
+repositories {
+    mavenCentral()
+}
 
 
 def ccGroupId = 'commons-codec'
@@ -37,20 +42,6 @@ def ccArtifactId = ccGroupId
 def ccsArtifactId = ccArtifactId + '-shaded'
 
 def ccVersion = '1.11'
-
-
-
-allprojects {
-
-    repositories {
-
-        jcenter()
-        maven { url 'https://jitpack.io' }
-        mavenCentral()
-
-    }
-
-}
 
 
 dependencies {
@@ -73,10 +64,11 @@ shadowJar {
 
 }
 
-
+artifacts {
+    archives shadowJar
+}
 
 publishing {
-
     publications {
 
         shadow(MavenPublication) {
