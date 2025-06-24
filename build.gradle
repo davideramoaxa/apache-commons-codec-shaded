@@ -34,7 +34,6 @@ repositories {
     mavenCentral()
 }
 
-
 def ccGroupId = 'commons-codec'
 
 def ccArtifactId = ccGroupId
@@ -42,7 +41,6 @@ def ccArtifactId = ccGroupId
 def ccsArtifactId = ccArtifactId + '-shaded'
 
 def ccVersion = '1.11'
-
 
 dependencies {
 
@@ -68,7 +66,10 @@ artifacts {
     archives shadowJar
 }
 
+
+
 publishing {
+
     publications {
 
         shadow(MavenPublication) {
